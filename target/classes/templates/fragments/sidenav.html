@@ -1,0 +1,114 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="../css/materialize.css">
+	<link rel="stylesheet" href="../css/customizacoes.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+	
+ -->
+
+<div th:fragment="sidenav">
+	<ul id="slide-out" class="sidenav sidenav-fixed"
+		style="padding-right: 5px; color: #36b449;">
+		<li>
+			<div class="user-view">
+				<div class="background" style="height: 220px;">
+					<img src="../images/LogoAutopassos.png">
+				</div>
+				<br> <br> <br>
+			</div>
+		</li>
+
+		<li>
+			<div class="divider"></div>
+		</li>
+
+		<li class="no-padding">
+
+			<ul class="collapsible">
+				<li>
+					<div class="collapsible-header waves-effect waves-cyan">
+						<i class="material-icons">assignment</i>Cadastros<span
+							class="badge"> <i class="material-icons right">expand_more</i></span>
+					</div>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="">Clientes</a></li>
+							<li><a href="">Parceiros</a></li>
+							<li><a href="">Usuarios</a></li>
+							<li><a href="">Contatos</a></li>
+							<li><a href="">Endereços</a></li>
+							<li><a href="">Material</a></li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="collapsible-header waves-effect waves-cyan">
+						<i class="material-icons">texture</i>Estoque<span class="badge">
+							<i class="material-icons right">expand_more</i>
+						</span>
+					</div>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="">Entrada</a></li>
+							<li><a href="">Consultar Estoque</a></li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="collapsible-header waves-effect waves-cyan">
+						<i class="material-icons">note_add</i>Orçamento<span class="badge">
+							<i class="material-icons right">expand_more</i>
+						</span>
+					</div>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="">Realizar Orçamento</a></li>
+							<li><a href="">Consultar Orçamentos</a></li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="collapsible-header waves-effect waves-cyan">
+						<i class="material-icons">build</i>Ordem de Serviço<span
+							class="badge"> <i class="material-icons right">expand_more</i></span>
+					</div>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="">Gerar Ordem de Serviço</a></li>
+							<li><a href="">Consultar Ordem de Serviço</a></li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<div class="collapsible-header waves-effect waves-cyan">
+						<i class="material-icons">attach_money</i>Pagamentos<span
+							class="badge"> <i class="material-icons right">expand_more</i></span>
+					</div>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="">Registrar Pagamento</a></li>
+							<li><a href="">Agendar Pagamento</a></li>
+							<li><a href="">Consultar Pagamentos</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+
+	<a href="#" data-target="slide-out" class="sidenav-trigger"><i
+		class="medium material-icons">menu</i></a>
+</div>
+
+
+
