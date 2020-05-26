@@ -29,6 +29,6 @@ public class PessoasController {
 		  if (listaPessoas != null) { model.addAttribute("pessoas", listaPessoas); 
 		  }
 		 
-		return "/listaPessoas";
+		return "/sidenav";
 	}
 }
