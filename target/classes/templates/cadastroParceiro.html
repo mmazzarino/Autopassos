@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Cadastro de Clientes</title>
+<title>Cadastro de Parceiro</title>
 <link rel="stylesheet" href="../css/materialize.css">
 <link rel="stylesheet" href="../css/customizacoes.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -29,24 +29,7 @@
 					<i class="material-icons prefix">account_circle</i> 
 					<!-- <input placeholder="" type="text" name="nomePessoa" th:value="*{nomePessoa}" class="validate">  -->
 					<input type="text" th:field="*{nomePessoa}" class="validate"/>
-					<label for="nomePessoa">Nome do Cliente</label>
-				</div>
-			</div>
-			
-
-			 <div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i> 
-					<input placeholder="" type="text" th:field="*{apelido}" class="validate">
-					<label for="apelido">Apelido</label>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i> 
-					<label for="dataNascimento">Data de Nascimento</label> 
-					<input placeholder="" type="text" th:field="*{dataNascimento}" class="validate">
+					<label for="nomePessoa">Nome do Parceiro</label>
 				</div>
 			</div>
 

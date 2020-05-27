@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Cadastro de Clientes</title>
@@ -14,50 +14,61 @@
 	<div th:replace="fragments/sidenav :: sidenav"></div>
 
 	<div class="container">
-		<form id="formulario" autocomplete="off" method="POST">			
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i>
-					<input placeholder=""  type="text" name="nomePessoa" class="validate">
-					<label for="nomePessoa">Nome do Cliente</label>					
+		<form id="formulario" autocomplete="off" th:object="${pessoa}" method="POST">
+
+			 <!-- <div class="row">
+				<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+					<div th:each="detailedError : ${#fields.detailedErrors()}">
+						<span th:text="${detailedError.message}"></span>
+					</div>
 				</div>
-			</div>	
-			
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i>
-					<input placeholder=""  type="text" name="apelido" class="validate">
-					<label for="apelido">Apelido</label>					
-				</div>
-			</div>	
-			
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i>
-					<label for="dataNascimento">Data de Nascimento</label>
-					<input placeholder=""  type="date" name="dataNascimento" class="validate">										
-				</div>
-			</div>	
-		
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i>
-					<input placeholder="xxx.xxx.xxx-xx"  type="text" color="yelow" name="cpf" class="validate">
-					<label for="cpf">CPF</label>					
-				</div>
-			</div>		
+			</div>  -->
 
 			<div class="row">
 				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i>
-					<input placeholder=""  type="text" name="cnpj" class="validate">
-					<label for="cnpj">CNPJ</label>										
+					<i class="material-icons prefix">account_circle</i> 
+					<!-- <input placeholder="" type="text" name="nomePessoa" th:value="*{nomePessoa}" class="validate">  -->
+					<input type="text" th:field="*{nomePessoa}" class="validate"/>
+					<label for="nomePessoa">Nome do Cliente</label>
+				</div>
+			</div>
+			
+
+			 <div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="" type="text" th:field="*{apelido}" class="validate">
+					<label for="apelido">Apelido</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> 
+					<label for="dataNascimento">Data de Nascimento</label> 
+					<input placeholder="" type="text" th:field="*{dataNascimento}" class="validate">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="xxx.xxx.xxx-xx" type="text" th:field="*{cpf}" class="validate"> 
+					<label for="cpf">CPF</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> <input
+						placeholder="" type="text" name="cnpj" class="validate"> <label
+						for="cnpj">CNPJ</label>
 				</div>
 			</div>
 
 			<div class="row botao">
-				<input class="waves-effect waves-light btn" type="submit" value="Gravar"/>				
-			</div>			
+				<input class="waves-effect waves-light btn" type="submit" value="Gravar" />
+			</div> 
 		</form>
 	</div>
 

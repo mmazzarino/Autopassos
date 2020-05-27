@@ -1,7 +1,5 @@
 package br.com.oficina.autopassos.entity;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +26,7 @@ public class Pessoas {
 	private String apelido;
 	
 	@Column(name = "DataNascimento")
-	private Date dataNascimento;
+	private String dataNascimento;
 	
 	@Column(name ="CodContato")
 	private Integer codContato;
@@ -74,11 +72,11 @@ public class Pessoas {
 		this.apelido = apelido;
 	}
 
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
