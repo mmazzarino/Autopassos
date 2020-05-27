@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cadastro de Clientes</title>
+<link rel="stylesheet" href="../css/materialize.css">
+<link rel="stylesheet" href="../css/customizacoes.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+</head>
+
+<body>
+	<div th:replace="fragments/navbar :: navbar"></div>
+	<div th:replace="fragments/sidenav :: sidenav"></div>
+
+	<div class="container">
+		<form id="formulario" autocomplete="off" method="POST">			
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i>
+					<input placeholder=""  type="text" name="nomePessoa" class="validate">
+					<label for="nomePessoa">Nome do Cliente</label>					
+				</div>
+			</div>	
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i>
+					<input placeholder=""  type="text" name="apelido" class="validate">
+					<label for="apelido">Apelido</label>					
+				</div>
+			</div>	
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i>
+					<label for="dataNascimento">Data de Nascimento</label>
+					<input placeholder=""  type="date" name="dataNascimento" class="validate">										
+				</div>
+			</div>	
+		
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i>
+					<input placeholder="xxx.xxx.xxx-xx"  type="text" color="yelow" name="cpf" class="validate">
+					<label for="cpf">CPF</label>					
+				</div>
+			</div>		
+
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i>
+					<input placeholder=""  type="text" name="cnpj" class="validate">
+					<label for="cnpj">CNPJ</label>										
+				</div>
+			</div>
+
+			<div class="row botao">
+				<input class="waves-effect waves-light btn" type="submit" value="Gravar"/>				
+			</div>			
+		</form>
+	</div>
+
+
+
+
+	<script src="../js/materialize.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	    var elems = document.querySelectorAll('.sidenav');
+	    var instances = M.Sidenav.init(elems, options);
+	  });
+</script>
+
+
+	<script>
+	$(document).ready(function() {
+		$('.sidenav').sidenav();
+	});
+</script>
+	<script>
+	$(document).ready(function() {
+		$('.collapsible').collapsible();
+	});
+</script>
+
+
+</body>
+</html>

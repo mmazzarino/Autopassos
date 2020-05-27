@@ -4458,7 +4458,7 @@ nav .input-field label i {
 }
 
 nav .input-field label.active i {
-  color: #fff;
+  color: red;
 }
 
 .navbar-fixed {
