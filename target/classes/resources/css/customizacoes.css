@@ -1,28 +1,20 @@
 @charset "ISO-8859-1";
-body{
-	background:#ccc url(https://gruporotamb.com.br/wp-content/uploads/2018/08/antique-1868726_1920.jpg) center top no-repeat;
-	background-size:100%;
-	background-attachment:fixed;
-	margin-left:300px;
+
+body {
+	background: #ccc
+		url(https://gruporotamb.com.br/wp-content/uploads/2018/08/antique-1868726_1920.jpg)
+		center top no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+	margin-left: 0px;
 }
 
-form{
+form {
 	background-color: rgba(41, 35, 41, 0.6);
 	font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30em; 
-    margin-top: -15px;  
-
+	margin-left: auto;
+	margin-right: auto;
+	width: 30em;
+	margin-top: 0px;
 }
- 
-/* div.container3 {
-   height: 10em;
-   position: relative }              1
-div.container3 p {
-   margin: 0;
-   position: absolute;               2
-   top: 50%;                         3
-   transform: translate(0, -50%) }  */
 }
-

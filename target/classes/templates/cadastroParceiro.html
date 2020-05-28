@@ -5,49 +5,57 @@
 <title>Cadastro de Parceiro</title>
 <link rel="stylesheet" href="../css/materialize.css">
 <link rel="stylesheet" href="../css/customizacoes.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 
 <body>
-	<div th:replace="fragments/navbar :: navbar"></div>
 	<div th:replace="fragments/sidenav :: sidenav"></div>
 
 	<div class="container">
 		<form id="formulario" autocomplete="off" th:object="${pessoa}" method="POST">
 
-			 <!-- <div class="row">
-				<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
-					<div th:each="detailedError : ${#fields.detailedErrors()}">
-						<span th:text="${detailedError.message}"></span>
-					</div>
-				</div>
-			</div>  -->
-
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">account_circle</i> 
-					<!-- <input placeholder="" type="text" name="nomePessoa" th:value="*{nomePessoa}" class="validate">  -->
 					<input type="text" th:field="*{nomePessoa}" class="validate"/>
 					<label for="nomePessoa">Nome do Parceiro</label>
 				</div>
 			</div>
-
+			
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">account_circle</i> 
-					<input placeholder="xxx.xxx.xxx-xx" type="text" th:field="*{cpf}" class="validate"> 
-					<label for="cpf">CPF</label>
+					<input placeholder="" type="text" th:field="*{cnpj}" class="validate"> 
+					<label for="cnpj">CNPJ</label>
 				</div>
 			</div>
-
+			
 			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i> <input
-						placeholder="" type="text" name="cnpj" class="validate"> <label
-						for="cnpj">CNPJ</label>
+				<div class="input-field col s4">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="DDD" type="text" th:field="*{dddCelular}" class="validate"> 
+					<label for="ddd">Celular</label>
+				</div>
+				
+				<div class="input-field col s6">
+					<input placeholder="Número" type="text" th:field="*{celular}" class="validate"> 
 				</div>
 			</div>
+			
+			<div class="row">
+				<div class="input-field col s4">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="DDD" type="text" th:field="*{dddTelefone}" class="validate"> 
+					<label for="ddd">Telefone</label>
+				</div>
+				
+				<div class="input-field col s6">
+					<input placeholder="Número" type="text" th:field="*{telefone}" class="validate"> 
+				</div>
+			</div>
+		
+			
 
 			<div class="row botao">
 				<input class="waves-effect waves-light btn" type="submit" value="Gravar" />
@@ -58,27 +66,20 @@
 
 
 
-	<script src="../js/materialize.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
+	
 	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-	    var elems = document.querySelectorAll('.sidenav');
-	    var instances = M.Sidenav.init(elems, options);
-	  });
-</script>
-
-
+		$(document).ready(function() {
+			$('.sidenav').sidenav();
+		});
+	</script>
 	<script>
-	$(document).ready(function() {
-		$('.sidenav').sidenav();
-	});
-</script>
-	<script>
-	$(document).ready(function() {
-		$('.collapsible').collapsible();
-	});
-</script>
+		$(document).ready(function() {
+			$('.collapsible').collapsible();
+		});
+	</script>
 
 
 </body>

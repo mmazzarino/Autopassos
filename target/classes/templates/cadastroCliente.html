@@ -10,7 +10,6 @@
 </head>
 
 <body>
-	<div th:replace="fragments/navbar :: navbar"></div>
 	<div th:replace="fragments/sidenav :: sidenav"></div>
 
 	<div class="container">
@@ -24,6 +23,23 @@
 				</div>
 			</div>  -->
 
+<!-- <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Telephone</label>
+        </div>
+      </div>
+    </form>
+  </div>
+   -->
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">account_circle</i> 
@@ -53,18 +69,12 @@
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">account_circle</i> 
-					<input placeholder="xxx.xxx.xxx-xx" type="text" th:field="*{cpf}" class="validate"> 
+					<input class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00" type="text" th:field="*{cpf}" class="validate"> 
 					<label for="cpf">CPF</label>
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i> <input
-						placeholder="" type="text" name="cnpj" class="validate"> <label
-						for="cnpj">CNPJ</label>
-				</div>
-			</div>
+		
 
 			<div class="row botao">
 				<input class="waves-effect waves-light btn" type="submit" value="Gravar" />
@@ -75,27 +85,18 @@
 
 
 
-	<script src="../js/materialize.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-	    var elems = document.querySelectorAll('.sidenav');
-	    var instances = M.Sidenav.init(elems, options);
-	  });
-</script>
-
-
+		$(document).ready(function() {
+			$('.sidenav').sidenav();
+		});
+	</script>
 	<script>
-	$(document).ready(function() {
-		$('.sidenav').sidenav();
-	});
-</script>
-	<script>
-	$(document).ready(function() {
-		$('.collapsible').collapsible();
-	});
-</script>
+		$(document).ready(function() {
+			$('.collapsible').collapsible();
+		});
+	</script>
 
 
 </body>

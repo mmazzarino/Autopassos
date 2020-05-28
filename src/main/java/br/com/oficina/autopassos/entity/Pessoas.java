@@ -22,6 +22,24 @@ public class Pessoas {
 	@Column(name = "TipoPessoa")
 	private char tipoPessoa;
 	
+	@Column(name = "dddCelular")
+	private Integer dddCelular;
+	
+	@Column(name = "Celular")
+	private Integer celular;
+	
+	@Column(name = "dddTelefone")
+	private Integer dddTelefone;
+	
+	@Column(name = "Telefone")
+	private Integer telefone;
+	
+	@Column(name = "Email")
+	private String email;
+	
+	@Column(name = "FlgWhatsApp")
+	private char flgWhatsApp;
+	
 	@Column(name = "Apelido")
 	private String apelido;
 	
@@ -111,6 +129,55 @@ public class Pessoas {
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
+
+	public Integer getDddCelular() {
+		return dddCelular;
+	}
+
+	public void setDddCelular(Integer dddCelular) {
+		this.dddCelular = dddCelular;
+	}
+
+	public Integer getCelular() {
+		return celular;
+	}
+
+	public void setCelular(Integer celular) {
+		this.celular = celular;
+	}
+
+	public Integer getDddTelefone() {
+		return dddTelefone;
+	}
+
+	public void setDddTelefone(Integer dddTelefone) {
+		this.dddTelefone = dddTelefone;
+	}
+
+	public Integer getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(Integer telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public char getFlgWhatsApp() {
+		return flgWhatsApp;
+	}
+
+	public void setFlgWhatsApp(char flgWhatsApp) {
+		this.flgWhatsApp = flgWhatsApp;
+	}
+	
 	
 	
 }
