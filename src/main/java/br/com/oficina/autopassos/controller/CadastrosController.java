@@ -1,29 +1,31 @@
 package br.com.oficina.autopassos.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import br.com.oficina.autopassos.entity.Pessoas;
+import br.com.oficina.autopassos.entity.Servicos;
 import br.com.oficina.autopassos.repository.PessoasRepository;
+import br.com.oficina.autopassos.repository.ServicosRepository;
 
 @Controller
 @RequestMapping("/cadastro")
-public class PessoasController {
+public class CadastrosController {
 	
 	  
 	  private PessoasRepository pessoasRepository;
+	  private ServicosRepository servicosRepository;
 	  
-	  @Autowired public PessoasController(PessoasRepository pessoaRepository) {
+	  @Autowired 
+	  public CadastrosController(PessoasRepository pessoaRepository, ServicosRepository servicosRepository) {
 		  this.pessoasRepository = pessoaRepository; 
+		  this.servicosRepository = servicosRepository;
 		  }
+	  
 	 
 	  @GetMapping("/cliente")
 	  public ModelAndView formCliente(Pessoas pessoa) {			
@@ -53,7 +55,18 @@ public class PessoasController {
 		  return "redirect:/";
 	  }
 	
-	
+	  @GetMapping("/servico")
+	  public ModelAndView formServico(Servicos servico) {			
+		  ModelAndView mv = new ModelAndView("/cadastroServico");
+		  mv.addObject("servico", servico);			
+		  return mv;
+		}
+		
+	  @PostMapping("/servico") 
+	  	public String adicionaServico(Servicos servico) {
+		  servicosRepository.save(servico);  	
+		  return "redirect:/";
+	  }
 	
 }
 

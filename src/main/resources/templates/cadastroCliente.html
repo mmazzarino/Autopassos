@@ -14,32 +14,7 @@
 
 	<div class="container">
 		<form id="formulario" autocomplete="off" th:object="${pessoa}" method="POST">
-
-			 <!-- <div class="row">
-				<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
-					<div th:each="detailedError : ${#fields.detailedErrors()}">
-						<span th:text="${detailedError.message}"></span>
-					</div>
-				</div>
-			</div>  -->
-
-<!-- <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" type="tel" class="validate">
-          <label for="icon_telephone">Telephone</label>
-        </div>
-      </div>
-    </form>
-  </div>
-   -->
+		
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">account_circle</i> 
@@ -69,12 +44,34 @@
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">account_circle</i> 
-					<input class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00" type="text" th:field="*{cpf}" class="validate"> 
+					<input placeholder="Ex.: 000.000.000-00" type="text" th:field="*{cpf}" class="validate"> 
 					<label for="cpf">CPF</label>
 				</div>
 			</div>
+			
+			<div class="row">
+				<div class="input-field col s4">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="DDD" type="text" th:field="*{dddCelular}" class="validate"> 
+					<label for="ddd">Celular</label>
+				</div>
+				
+				<div class="input-field col s6">
+					<input placeholder="Número" type="text" th:field="*{celular}" class="validate"> 
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s4">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="DDD" type="text" th:field="*{dddTelefone}" class="validate"> 
+					<label for="ddd">Telefone</label>
+				</div>
+				<div class="input-field col s6">
+					<input placeholder="Número" type="text" th:field="*{telefone}" class="validate"> 
+				</div>
+			</div>
 
-		
 
 			<div class="row botao">
 				<input class="waves-effect waves-light btn" type="submit" value="Gravar" />
