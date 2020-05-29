@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Novo Orçamento</title>
+<link rel="stylesheet" href="../css/materialize.css">
+<link rel="stylesheet" href="../css/customizacoes.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+	<div th:replace="fragments/sidenav :: sidenav"></div>
+
+
+
+
+	<div class="container">
+		<form id="formulario" autocomplete="off" th:object="${orcamento}" method="POST">
+		
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> 
+					<!-- <input placeholder="" type="text" name="nomePessoa" th:value="*{nomePessoa}" class="validate">  -->
+					<input type="text" th:field="*{codPessoa}" class="validate"/>
+					<label for="codPessoa">Código do cliente</label>
+				</div>
+			</div>
+			
+
+			 <div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="" type="text" th:field="*{nomeCarro}" class="validate">
+					<label for="nomeCarro">Nome do carro</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> 
+					<label for="descricaoServico">Descrição dos serviços</label> 
+					<input placeholder="" type="text" th:field="*{descricaoServico}" class="validate">
+					
+					<div th:unless="${#lists.isEmpty(listaServicos)}">
+						<dl th:each="servico : ${listaServicos}">
+							<dt class="bookHeadline">
+								<label> <input type="checkbox" /> <span></span> </label>
+								<span th:text="${servico.nomeServico}"></span> 
+							</dt>
+						</dl>
+					</div>
+				
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="" type="text" th:field="*{codServicos}" class="validate"> 
+					<label for="codServicos">Códigos de serviços</label>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="" type="text" th:field="*{horasServico}" class="validate"> 
+					<label for="horasServico">Horas de serviço</label>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="" type="text" th:field="*{valorTotal}" class="validate"> 
+					<label for="valorTotal">Valor total</label>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> 
+					<input placeholder="" type="text" th:field="*{porcDesconto}" class="validate"> 
+					<label for="porcDesconto">Desconto %</label>
+				</div>
+			</div>
+
+
+			<div class="row botao">
+				<input class="waves-effect waves-light btn" type="submit" value="Gravar" />
+			</div> 
+		</form>
+	</div>
+	
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.sidenav').sidenav();
+		});
+	</script>
+	<script>
+		$(document).ready(function() {
+			$('.collapsible').collapsible();
+		});
+	</script>
+
+
+</body>
+</html>

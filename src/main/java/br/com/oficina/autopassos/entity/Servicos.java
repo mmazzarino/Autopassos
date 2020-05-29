@@ -16,11 +16,11 @@ public class Servicos {
 	@Column(name = "CodServico")
 	private Integer codServico;
 	
-	@Column(name = "NomeServico")
+	@Column(length = 20, name = "NomeServico")
 	private String nomeServico;
 	
 	@Column(name = "ValorHora")
-	private Integer valorHora;
+	private Float valorHora;
 
 	public Integer getCodServico() {
 		return codServico;
@@ -38,11 +38,11 @@ public class Servicos {
 		this.nomeServico = nomeServico;
 	}
 
-	public Integer getValorHora() {
+	public Float getValorHora() {
 		return valorHora;
 	}
 
-	public void setValorHora(Integer valorHora) {
+	public void setValorHora(Float valorHora) {
 		this.valorHora = valorHora;
 	}
 

@@ -16,10 +16,10 @@ public class Usuarios {
 	@Column(name ="CodUsuario")
 	private Integer codUsuario;
 	
-	@Column(name = "NomeUsuario")
+	@Column(length = 10, name = "NomeUsuario")
 	private String nomeUsuario;
 	
-	@Column(name = "SenhaUsuario")
+	@Column(length = 12, name = "SenhaUsuario")
 	private String senhaUsuario;
 
 	public String getSenhaUsuario() {
