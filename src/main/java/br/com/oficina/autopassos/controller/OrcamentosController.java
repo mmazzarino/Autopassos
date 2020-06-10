@@ -1,5 +1,6 @@
 package br.com.oficina.autopassos.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,8 @@ public class OrcamentosController {
 		  mv.addObject("orcamento", orcamento);
 		  List<Servicos> listaServicos = servicosRepository.findAll();
 		  mv.addObject("listaServicos", listaServicos);
+		  
+		  
 		  return mv;
 		}
 		

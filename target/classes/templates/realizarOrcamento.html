@@ -38,34 +38,24 @@
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">account_circle</i> 
-					<label for="descricaoServico">Descrição dos serviços</label> 
 					<input placeholder="" type="text" th:field="*{descricaoServico}" class="validate">
-					
-					<div th:unless="${#lists.isEmpty(listaServicos)}">
-						<dl th:each="servico : ${listaServicos}">
-							<dt class="bookHeadline">
-								<label> <input type="checkbox" /> <span></span> </label>
-								<span th:text="${servico.nomeServico}"></span> 
-							</dt>
-						</dl>
-					</div>
-				
+					<label for="descricaoServico">Descrição dos serviços</label> 					
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i> 
-					<input placeholder="" type="text" th:field="*{codServicos}" class="validate"> 
-					<label for="codServicos">Códigos de serviços</label>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i> 
-					<input placeholder="" type="text" th:field="*{horasServico}" class="validate"> 
-					<label for="horasServico">Horas de serviço</label>
+				<div class="input-field col s6">
+					<div th:unless="${#lists.isEmpty(listaServicos)}">
+						<dl th:each="servico : ${listaServicos}">
+							<dt class="bookHeadline">
+								<label>
+									<input type="checkbox" name="servicosHoras" th:value="'*' + ${servico.nomeServico} + '*'" th:id="${servico.nomeServico}"
+									 th:onclick="javascript:addInputHours([[${servico.nomeServico}]]);"  /> <span th:text="${servico.nomeServico}"> </span> 								 
+								</label> 
+								<span><input type="time" th:id="'time_id_' + ${servico.nomeServico}" style="display:none" th:placeholder="'Horas de ' + ${servico.nomeServico}" th:field="*{servicosHoras}"> </span> 
+							</dt>
+						</dl>
+					</div>			
 				</div>
 			</div>
 			
@@ -87,15 +77,38 @@
 
 
 			<div class="row botao">
-				<input class="waves-effect waves-light btn" type="submit" value="Gravar" />
+				<input class="waves-effect waves-light btn" type="submit" value="Gravar" th:onclick="javascript:teste2();"/>
 			</div> 
 		</form>
 	</div>
 	
+<script>
+	function teste2(){
+		document
+	}
+</script>	
+	
+<script> 
+	function addInputHours(checkbox_id){
+		var checkBox = document.getElementById(checkbox_id);
+		var inputText = document.getElementById("time_id_" + checkbox_id);
+		if (checkBox.checked == true){
+			inputText.style.display = "block";
+			console.log(inputText);
+			inputText.required = "required";
+		} else {
+			inputText.value = "";
+			inputText.style.display = "none";
+			inputText.required = "";
+		  }
+};
+	</script>
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+	
 	<script>
 		$(document).ready(function() {
 			$('.sidenav').sidenav();

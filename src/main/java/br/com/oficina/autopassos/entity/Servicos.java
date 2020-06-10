@@ -19,7 +19,7 @@ public class Servicos {
 	@Column(length = 20, name = "NomeServico")
 	private String nomeServico;
 	
-	@Column(name = "ValorHora")
+	@Column(name = "ValorHora", columnDefinition = "Decimal(10, 2) default '100,00'")
 	private Float valorHora;
 
 	public Integer getCodServico() {

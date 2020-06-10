@@ -1,5 +1,7 @@
 package br.com.oficina.autopassos.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,17 +27,15 @@ public class Orcamentos {
 	@Column(length = 1000, name = "DescricaoServico")
 	private String descricaoServico;
 	
-	@Column(length = 100, name = "CodServicos")
-	private String codServicos;
-	
-	@Column(length = 100, name = "HorasServico")
-	private String horasServico;
+	@Column(name = "ServicosHoras")
+	private String servicosHoras;
 	
 	@Column(name = "ValorTotal")
 	private Float valorTotal;
 	
 	@Column(name = "PorcDesconto")
 	private Float porcDesconto;
+
 
 	public Integer getCodOrcamento() {
 		return codOrcamento;
@@ -69,20 +69,13 @@ public class Orcamentos {
 		this.descricaoServico = descricaoServico;
 	}
 
-	public String getCodServicos() {
-		return codServicos;
+
+	public String getServicosHoras() {
+		return servicosHoras;
 	}
 
-	public void setCodServicos(String codServicos) {
-		this.codServicos = codServicos;
-	}
-
-	public String getHorasServico() {
-		return horasServico;
-	}
-
-	public void setHorasServico(String horasServico) {
-		this.horasServico = horasServico;
+	public void setServicosHoras(String servicosHoras) {
+		this.servicosHoras = servicosHoras;
 	}
 
 	public Float getValorTotal() {
