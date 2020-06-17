@@ -20,9 +20,7 @@
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">account_circle</i> 
-					<!-- <input placeholder="" type="text" name="nomePessoa" th:value="*{nomePessoa}" class="validate">  -->
-					<input type="text" th:field="*{codPessoa}" class="validate"/>
-					<label for="codPessoa">Código do cliente</label>
+					<a href="/orcamento/getCliente" class="breadcrumb">Selecione o cliente</a>
 				</div>
 			</div>
 			
@@ -49,7 +47,7 @@
 						<dl th:each="servico : ${listaServicos}">
 							<dt class="bookHeadline">
 								<label>
-									<input type="checkbox" name="servicosHoras" th:value="'*' + ${servico.nomeServico} + '*'" th:id="${servico.nomeServico}"
+									<input type="checkbox" name="servicosHoras" th:value="${servico.nomeServico}" th:id="${servico.nomeServico}"
 									 th:onclick="javascript:addInputHours([[${servico.nomeServico}]]);"  /> <span th:text="${servico.nomeServico}"> </span> 								 
 								</label> 
 								<span><input type="time" th:id="'time_id_' + ${servico.nomeServico}" style="display:none" th:placeholder="'Horas de ' + ${servico.nomeServico}" th:field="*{servicosHoras}"> </span> 
@@ -57,51 +55,29 @@
 						</dl>
 					</div>			
 				</div>
-			</div>
-			
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i> 
-					<input placeholder="" type="text" th:field="*{valorTotal}" class="validate"> 
-					<label for="valorTotal">Valor total</label>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">account_circle</i> 
-					<input placeholder="" type="text" th:field="*{porcDesconto}" class="validate"> 
-					<label for="porcDesconto">Desconto %</label>
-				</div>
-			</div>
-
+			</div>			
+				
 
 			<div class="row botao">
-				<input class="waves-effect waves-light btn" type="submit" value="Gravar" th:onclick="javascript:teste2();"/>
+				<input class="waves-effect waves-light btn" type="submit" value="Gravar"/>
 			</div> 
 		</form>
 	</div>
+		
 	
-<script>
-	function teste2(){
-		document
-	}
-</script>	
-	
-<script> 
-	function addInputHours(checkbox_id){
-		var checkBox = document.getElementById(checkbox_id);
-		var inputText = document.getElementById("time_id_" + checkbox_id);
-		if (checkBox.checked == true){
-			inputText.style.display = "block";
-			console.log(inputText);
-			inputText.required = "required";
-		} else {
-			inputText.value = "";
-			inputText.style.display = "none";
-			inputText.required = "";
-		  }
-};
+	<script> 
+		function addInputHours(checkbox_id){
+			var checkBox = document.getElementById(checkbox_id);
+			var inputText = document.getElementById("time_id_" + checkbox_id);
+			if (checkBox.checked == true){
+				inputText.style.display = "block";
+				inputText.required = "required";
+			} else {
+				inputText.value = "";
+				inputText.required = "";
+				inputText.style.display = "none";
+			  }
+		};
 	</script>
 
 

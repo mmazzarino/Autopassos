@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Seleção de Cliente</title>
+<link rel="stylesheet" href="../css/materialize.css">
+<link rel="stylesheet" href="../css/customizacoes.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+</head>
+
+<body>
+	<div th:replace="fragments/sidenav :: sidenav"></div>
+
+	<div class="container">
+		<form id="formulario" autocomplete="off" th:object="${pessoas}"
+			method="POST">
+
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">account_circle</i> <input
+						placeholder="" type="text" th:field="*{nomePessoa}"
+						class="validate"> <label for="nomePessoa">Nome do
+						Cliente</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<div th:unless="${#lists.isEmpty(pessoas)}">
+						<!-- <table>
+							<thead>
+								<tr>
+									<th>Código</th>
+									<th>Nome do Cliente</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr th:each="cliente : ${clientes}">
+		
+										<tr>
+											<td>"${cliente.codPessoa}"</td>
+											<td>"${cliente.nomePessoa}"</td>
+										</tr>
+									
+								</tr>
+							</tbody>
+						</table> -->
+					</div>
+				</div>
+			</div> 
+
+			<div class="row botao">
+				<input class="waves-effect waves-light btn" type="submit"
+					value="Pesquisar" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>

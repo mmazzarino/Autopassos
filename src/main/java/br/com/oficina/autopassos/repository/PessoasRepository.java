@@ -6,7 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.oficina.autopassos.entity.Pessoas;
 
+
 public interface PessoasRepository extends JpaRepository<Pessoas, Integer>{
 
-	List <Pessoas> findByNomePessoa(String nomePessoa);
+	public List <Pessoas> findByNomePessoa(String nomePessoa);
+	
+	public List <Pessoas> findAll();
 }
